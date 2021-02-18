@@ -1,0 +1,64 @@
+﻿@page
+@model StoreManager.Pages.DSLoaiHang.IndexModel
+@{
+    ViewData["Title"] = "Quản lý loại hàng";
+}
+<div class="containerHangHoa">
+    <div class="row">
+        <form class="form-inline mb-2 col-6 text_12" action="/action_page.php">
+            <input class="form-control mr-sm-2 text_12 " type="text" placeholder="Tìm kiếm loại hàng ...">
+            <button class="btn btn-info text_12" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="col-6">
+            <button type="button" class="btn btn-primary mr-2 text_12">
+                <i class="fas fa-plus mr-1"></i>Thêm
+            </button>
+
+            <a type="button" class="btn btn-primary mr-2 text_12" href="/hanghoa/1">
+                <i class="fas fa-plus mr-1"></i>Chi Tiết
+            </a>
+            <button type="button" class="btn btn-success mr-2 text_12" disabled>
+                <i class="fas fa-edit mr-1"></i> Xửa
+            </button>
+            <button type="button" class="btn btn-danger mr-2 text_12" disabled>
+                <i class="fas fa-trash-alt mr-1"></i> Xoá
+            </button>
+
+
+        </div>
+    </div>
+    <form method="post">
+        <table class="table table-bordered table-hover text_12">
+            <thead class="thead-dark text_12">
+                <tr>
+                    <th scope="col">Mã loại hàng</th>
+                    <th scope="col">Tên loại hàng</th>
+                    <th scope="col">Mô tả</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                    foreach (var loaiHang in Model.dsLoaiHang)
+                    {
+                        <tr>
+                            <th scope="row">@{CheckBox(loaiHang.maLoaiHang);}</th>
+                            <td>@loaiHang.tenLoaihang</td>
+                            <td>@loaiHang.moTaLoaihang</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+    </form>
+
+</div>
+@{
+    void CheckBox(int id)
+    {
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id=@id name="languages" value=@id />
+            <label class="custom-control-label" for=@id>@id</label>
+        </div>
+    }
+}

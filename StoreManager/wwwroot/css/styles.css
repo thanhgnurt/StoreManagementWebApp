@@ -1,0 +1,26 @@
+﻿.footer {
+    position: relative;
+    color: white;
+}
+
+.containerMain {
+    min-height: calc(100vh - 61px);
+}
+
+    .containerMain a {
+        font-size: 14px;
+    }
+
+.iconHome a {
+    font-size: 25px;
+    color: rgb(40, 92, 219) !important;
+}
+
+.iconHome a :hover {
+    color: rgb(198, 116, 34);
+}
+
+.text_12 {
+    font-size: 12px;
+
+}

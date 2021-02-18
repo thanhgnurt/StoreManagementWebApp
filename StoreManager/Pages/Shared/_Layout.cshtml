@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="~/lib/font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/solid.css" rel="stylesheet" />
+    <link href="~/css/styles.css" rel="stylesheet" />
+    <link href="~/css/hanghoa.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="containerMain">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light mb-2">
+            <div class="iconHome">
+                <a class="navbar-brand" href="/">
+                    <i class="fas fa-store"></i>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ml-3">
+                        <a class="nav-link text-dark" href="/dshanghoa">
+                            <i class="fas fa-boxes"> Hàng Hoá</i>
+                        </a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="nav-link text-dark" href="/dsloaihang">
+                            <i class="fas fa-clipboard-list"> Loại Hàng</i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown ml-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-file-invoice-dollar"> Hoá Đơn</i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-dark" href="#">Action</a>
+                            <a class="dropdown-item text-dark" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-dark" href="#">Something else here</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown ml-3">
+                        <a class="nav-link dropdown-toggle text-dark" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-chart-bar"> Thống Kê</i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item text-dark" href="#">Action</a>
+                            <a class="dropdown-item text-dark" href="#">Another action</a>
+                            <div class="dropdown-divider text-dark"></div>
+                            <a class="dropdown-item text-dark" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+        <div class="ml-1 mr-1">
+            <div class="container-fluid ">
+                @RenderBody()
+            </div>
+        </div>
+
+    </div>
+
+
+    <footer class="border-top footer bg-dark text-muted">
+        <div class="container ">
+            &copy; 2021 - StoreManager - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
