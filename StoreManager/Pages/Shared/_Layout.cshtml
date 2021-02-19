@@ -4,56 +4,57 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
+    <link href="~/css/css.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link href="~/lib/font-awesome/css/fontawesome.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/solid.css" rel="stylesheet" />
-    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/TextFile.css" rel="stylesheet" />
 </head>
 <body>
     <div class="containerMain">
         <nav class="navbar navbar-expand-sm navbar-light bg-light mb-2">
-            <div class="iconHome">
+            <div class="iconHome @ViewData["classIndex"]">
                 <a class="navbar-brand" href="/">
-                    <i class="fas fa-store"></i>
+                    <i class="fas fa-home"></i>
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ml-3 itemMenu">
-                        <a class="nav-link text-dark" href="/dshanghoa">
-                            <i class="fas fa-boxes"> Hàng Hoá</i>
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item ml-3 itemMenu  text-dark">
+                        <a class="nav-link text-dark @ViewData["classHH"]" href="/dshanghoa">
+                            <i class="fas fa-boxes "> Hàng Hoá</i>
                         </a>
                     </li>
                     <li class="nav-item ml-3 itemMenu">
-                        <a class="nav-link text-dark" href="/dsloaihang">
-                            <i class="fas fa-clipboard-list"> Loại Hàng</i>
+                        <a class="nav-link text-dark @ViewData["classLH"]" href="/dsloaihang">
+                            <i class="fas fa-clipboard-list "> Loại Hàng</i>
                         </a>
                     </li>
                     <li class="nav-item dropdown ml-3 itemMenu">
-                        <a class="nav-link dropdown-toggle text-dark" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link  text-dark dropdown-toggle " href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-file-invoice-dollar"> Hoá Đơn</i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-dark" href="#">Action</a>
-                            <a class="dropdown-item text-dark" href="#">Another action</a>
+                            <a class="dropdown-item " href="#">Action</a>
+                            <a class="dropdown-item " href="#">Another action</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-dark" href="#">Something else here</a>
+                            <a class="dropdown-item " href="#">Something else here</a>
                         </div>
                     </li>
 
                     <li class="nav-item dropdown ml-3 itemMenu">
-                        <a class="nav-link dropdown-toggle text-dark" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link  text-dark dropdown-toggle " href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-chart-bar"> Thống Kê</i>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item text-dark" href="#">Action</a>
-                            <a class="dropdown-item text-dark" href="#">Another action</a>
-                            <div class="dropdown-divider text-dark"></div>
-                            <a class="dropdown-item text-dark" href="#">Something else here</a>
+                            <a class="dropdown-item " href="#">Action</a>
+                            <a class="dropdown-item " href="#">Another action</a>
+                            <div class="dropdown-divider "></div>
+                            <a class="dropdown-item " href="#">Something else here</a>
                         </div>
                     </li>
                 </ul>

@@ -1,4 +1,5 @@
-﻿.footer {
+﻿
+.footer {
     position: relative;
     color: white;
 }
@@ -13,16 +14,15 @@
 
 .iconHome a {
     font-size: 25px;
-    color: rgb(40, 92, 219) !important;
 }
 
-    .iconHome a :hover {
-        color: rgb(198, 116, 34);
-    }
+.iconHome a :hover {
+    color: rgb(198, 116, 34);
+}
 
 .itemMenu a {
     font-size: 15px;
-    color: rgb(0, 0, 0) !important;
+    border : 1px solid white;
 }
 
 .itemMenu a :hover {
@@ -32,7 +32,18 @@
 .text_12 {
     font-size: 12px;
 }
+
 .input_search {
     min-width: 300px;
     width: 300px;
+}
+.classLH {
+    border: 1px solid black !important;
+}
+
+.classHH {
+    border: 1px solid black !important;
+}
+.atIndex a {
+    color: rgb(28, 53, 254) !important;
 }

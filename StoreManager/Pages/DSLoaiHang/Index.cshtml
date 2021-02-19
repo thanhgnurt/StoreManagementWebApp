@@ -2,11 +2,12 @@
 @model StoreManager.Pages.DSLoaiHang.IndexModel
 @{
     ViewData["Title"] = "Quản lý loại hàng";
+    ViewData["classLH"] = "classLH";
 }
 <div class="containerHangHoa">
     <div class="row">
         <form class="form-inline mb-2 col-6 text_12" action="/action_page.php">
-            <input class="form-control mr-sm-2 text_12 " type="text" placeholder="Tìm kiếm loại hàng ...">
+            <input class="form-control mr-sm-2 text_12 input_search" type="text" placeholder="Tìm kiếm loại hàng ...">
             <button class="btn btn-info text_12" type="submit"><i class="fas fa-search"></i></button>
         </form>
         <div class="col-6">
