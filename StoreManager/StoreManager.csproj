@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DATA_ACCESS\" />
     <Folder Include="CONSTANT\" />
+    <Folder Include="Pages\_Common\" />
   </ItemGroup>
 
 </Project>

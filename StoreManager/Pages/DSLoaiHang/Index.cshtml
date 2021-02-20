@@ -11,21 +11,9 @@
             <button class="btn btn-info text_12" type="submit"><i class="fas fa-search"></i></button>
         </form>
         <div class="col-6">
-            <button type="button" class="btn btn-primary mr-2 text_12">
-                <i class="fas fa-plus mr-1"></i>Thêm
-            </button>
-
-            <a type="button" class="btn btn-primary mr-2 text_12" href="/hanghoa/1">
-                <i class="fas fa-plus mr-1"></i>Chi Tiết
+            <a type="button" class="btn btn-primary mr-2 text_12" href="/loaihang/create">
+                <i class="fas fa-plus mr-1"></i>Thêm Hàng Hoá
             </a>
-            <button type="button" class="btn btn-success mr-2 text_12" disabled>
-                <i class="fas fa-edit mr-1"></i> Xửa
-            </button>
-            <button type="button" class="btn btn-danger mr-2 text_12" disabled>
-                <i class="fas fa-trash-alt mr-1"></i> Xoá
-            </button>
-
-
         </div>
     </div>
     <form method="post">
@@ -35,6 +23,7 @@
                     <th scope="col">Mã loại hàng</th>
                     <th scope="col">Tên loại hàng</th>
                     <th scope="col">Mô tả</th>
+                    <th scope="col">Chức năng</th>
                 </tr>
             </thead>
             <tbody>
@@ -45,12 +34,16 @@
                             <th scope="row">@{CheckBox(loaiHang.maLoaiHang);}</th>
                             <td>@loaiHang.tenLoaihang</td>
                             <td>@loaiHang.moTaLoaihang</td>
+                            <td>@{ButtonEditDelete(loaiHang.maLoaiHang);}</td>
                         </tr>
                     }
                 }
 
             </tbody>
         </table>
+        <button type="submit" class="btn btn-danger mr-2 text_12">
+            <i class="fas fa-trash-alt mr-1"></i> Xoá Danh Sách Chọn
+        </button>
     </form>
 
 </div>
@@ -61,5 +54,18 @@
             <input type="checkbox" class="custom-control-input" id=@id name="languages" value=@id />
             <label class="custom-control-label" for=@id>@id</label>
         </div>
+    }
+}
+
+@{
+    void ButtonEditDelete(int id)
+    {
+
+        <a type="button" class="btn btn-warning mr-2 text_12" href="/hanghoa/@id?handler=edit">
+            <i class="fa fa-edit"></i>
+        </a>
+        <a type="button" class="btn btn-danger mr-2 text_12" href="/hanghoa/@id?handler=delete">
+            <i class="fa fa-trash-alt"></i>
+        </a>
     }
 }

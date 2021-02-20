@@ -4,11 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using StoreManager.BUSINESS_SERVICES.Interface;
 using StoreManager.ENTITIES;
+using StoreManager.DATA_ACCESS;
 
 namespace StoreManager.BUSINESS_SERVICES.RepoGoods
 {
+    /// <summary>
+    /// The class description of the goods repository
+    /// </summary>
     public class RepositoryGoods : IRepositoryGoods
     {
+        
         public HashSet<Goods> Goodes { get; set; } = new HashSet<Goods>
         {
             new Goods {maHangHoa=1, tenHangHoa="Rượi", hanSuDung=new DATE(12,05,2025), ctySanXuat="Apple", loaiHangHoa="Thực Phẩm", namSanXuat=2020},
@@ -24,5 +29,6 @@ namespace StoreManager.BUSINESS_SERVICES.RepoGoods
         {
             return Goodes.SingleOrDefault(hangHoa => hangHoa.maHangHoa == id);
         }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿
 .footer {
-    position: relative;
+    position:absolute;
     color: white;
 }
 
@@ -8,9 +8,9 @@
     min-height: calc(100vh - 61px);
 }
 
-    .containerMain a {
-        font-size: 14px;
-    }
+.containerMain a {
+    font-size: 14px;
+}
 
 .iconHome a {
     font-size: 25px;
@@ -46,4 +46,15 @@
 }
 .atIndex a {
     color: rgb(28, 53, 254) !important;
+}
+
+.page_navigation{
+    text-align: center;
+}
+.containerHangHoa {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+.table{
+    line-height: 30px;
 }

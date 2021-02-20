@@ -6,6 +6,9 @@ using StoreManager.ENTITIES;
 
 namespace StoreManager.BUSINESS_SERVICES.RepoGoods
 {
+    /// <summary>
+    /// Class description of the goods
+    /// </summary>
     public class Goods
     {
         public int maHangHoa { get; set; }
@@ -14,5 +17,6 @@ namespace StoreManager.BUSINESS_SERVICES.RepoGoods
         public string ctySanXuat { get; set; }
         public int namSanXuat { get; set; }
         public string loaiHangHoa { get; set; }
+
     }
 }

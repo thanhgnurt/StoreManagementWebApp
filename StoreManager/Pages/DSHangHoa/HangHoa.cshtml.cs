@@ -26,5 +26,12 @@ namespace StoreManager.Pages.DSHangHoa
             goods = _khoHang.Get(maHangHoa);
             ViewData["Title"] = goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {goods.tenHangHoa}";
         }
+        public void OnGetCreate()
+        {
+            CongViec = Action.ThemMoi;
+            goods = new Goods();
+            ViewData["Title"] = "Them hang hoa";
+            ViewData["classHH"] = "classHH";
+        }
     }
 }
