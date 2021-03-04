@@ -9,7 +9,7 @@ namespace StoreManager.BUSINESS_SERVICES.Common
     {
         protected string CodeHead;
 
-        protected static DateTime dateBase = new DateTime();
+        protected static DateTime dayBase = DateTime.Now;
         protected string ConcatString(params string[] listString)
         {
             string resultString = "";

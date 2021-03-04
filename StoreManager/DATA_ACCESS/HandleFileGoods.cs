@@ -10,27 +10,16 @@ namespace StoreManager.DATA_ACCESS
 {
     public class HandleFileGoods : HandleFile<Goods>
     {
-        public static HashSet<Goods> DataTemplate { get; set; } = new HashSet<Goods>
-        {
-
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020},
-            new Goods { TenHangHoa="Rượi", HanSuDung=new DATE(12,05,2025), CtySanXuat="Apple", LoaiHangHoa="Thực Phẩm", NamSanXuat=2020}
-        };
+       
         public static HashSet<Goods> ReadFileGoods()
         {
-            HashSet<Goods> Goodses =  ReadFile(ConstantPath.pathFileGoods, DataTemplate);
+            HashSet<Goods> Goodses =  ReadFile(ConstantPath.pathFileGoods);
             return Goodses;
 
+        }
+        public static void SaveChangeGoods(HashSet<Goods> goodses)
+        {
+            SaveChange(ConstantPath.pathFileGoods, goodses);
         }
 
     }

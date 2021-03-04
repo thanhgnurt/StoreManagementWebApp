@@ -23,7 +23,7 @@ namespace StoreManager.DATA_ACCESS
         };
         public static HashSet<TyGoods> ReadFileTyGoods()
         {
-            HashSet<TyGoods> Goodses = ReadFile(ConstantPath.pathFileGoodsType, DataTemplate);
+            HashSet<TyGoods> Goodses = ReadFile(ConstantPath.pathFileGoodsType);
             return Goodses;
         }
     }

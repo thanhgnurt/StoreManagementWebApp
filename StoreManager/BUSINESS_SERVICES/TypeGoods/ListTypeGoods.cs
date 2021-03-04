@@ -7,9 +7,9 @@ using StoreManager.DATA_ACCESS;
 
 namespace StoreManager.BUSINESS_SERVICES.TypeGoods
 {
-    public class ListTypeGoods : IListTypeGoods
+    public class ListTypeGoods : HandleFileTypeGoods,IListTypeGoods
     {
-        public HashSet<TyGoods> DsLoaiHang { get; set; } = HandleFileTypeGoods.ReadFileTyGoods();
+        public HashSet<TyGoods> DsLoaiHang { get; set; } = ReadFileTyGoods();
 
 
 

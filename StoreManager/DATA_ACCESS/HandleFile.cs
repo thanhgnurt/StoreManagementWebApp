@@ -17,18 +17,28 @@ namespace StoreManager.DATA_ACCESS
 
         private static readonly XmlSerializer _serializer = new XmlSerializer(typeof(HashSet<T>));
 
-        protected static HashSet<T> ReadFile(string pathFile, HashSet<T> dataTemplate)
+        protected static HashSet<T> ReadFile(string pathFile)
         {
             HashSet<T> data = new HashSet<T>();
             if (!File.Exists(pathFile))
             {
-                using var streamCre = File.Create(pathFile);
-                _serializer.Serialize(streamCre, dataTemplate);
+                using var streamCreate = File.Create(pathFile);
+                _serializer.Serialize(streamCreate, data);
 
             }
-            using var streamRead = File.OpenRead(pathFile);
-            data = _serializer.Deserialize(streamRead) as HashSet<T>;
+            else
+            {
+                using var streamRead = File.OpenRead(pathFile);
+                data = _serializer.Deserialize(streamRead) as HashSet<T>;
+            }
+
+
             return data;
+        }
+        protected static void SaveChange(string pathFile,HashSet<T> data)
+        {
+            using var streamCreate = File.Create(pathFile);
+            _serializer.Serialize(streamCreate, data);
         }
     }
 

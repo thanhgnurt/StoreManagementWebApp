@@ -11,7 +11,7 @@ namespace StoreManager.Pages.DSHangHoa
 {
     public class HangHoaModel : PageModel
     {
-        public enum Action { ChiTiet, Xoa, CapNhat, ThemMoi };
+        public enum Action { Detail, Delete, Update, Create };
 
         public readonly IRepositoryGoods _khoHang;
         public HangHoaModel(IRepositoryGoods KhoHang)
@@ -22,24 +22,24 @@ namespace StoreManager.Pages.DSHangHoa
         public Goods Goods { get; set; }
         public void OnGet(string maHangHoa)
         {
-            CongViec = Action.ChiTiet;
+            CongViec = Action.Detail;
             Goods = _khoHang.Get(maHangHoa);
             ViewData["Title"] = Goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Goods.TenHangHoa}";
             ViewData["classHH"] = "classHH";
         }
         public void OnGetCreate()
         {
-            CongViec = Action.ThemMoi;
-            Goods = new Goods();
-            ViewData["Title"] = "Them hang hoa";
+            CongViec = Action.Create;
+            Goods = RepositoryGoods.GoodsNull;
+            ViewData["Title"] = "Thêm hàng hoá";
             ViewData["classHH"] = "classHH";
         }
-        public void OnGetDetail(string maHangHoa)
+        public IActionResult OnPostCreate(Goods goods)
         {
-            CongViec = Action.ChiTiet;
-            Goods = _khoHang.Get(maHangHoa);
-            ViewData["Title"] = Goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Goods.TenHangHoa}";
-            ViewData["classHH"] = "classHH";
+
+            _khoHang.Add(goods);
+            return new RedirectToPageResult("index");
         }
+
     }
 }

@@ -10,6 +10,7 @@ namespace StoreManager.BUSINESS_SERVICES.Interface
     {
         public HashSet<Goods> Goodses { get; set; }
         public Goods Get(string id);
+        public void Add(Goods goods);
 
     }
 }
