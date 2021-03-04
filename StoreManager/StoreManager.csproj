@@ -7,10 +7,11 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.2" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.2.8" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CONSTANT\" />
+    <Folder Include="DATA\" />
     <Folder Include="Pages\_Common\" />
   </ItemGroup>
 

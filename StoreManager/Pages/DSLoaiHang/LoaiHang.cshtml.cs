@@ -14,22 +14,22 @@ namespace StoreManager.Pages.DSLoaiHang
         public enum Action { ChiTiet, Xoa, CapNhat, ThemMoi };
 
         public readonly IListTypeGoods _typeGoodes;
-        public LoaiHangModel(IListTypeGoods typeGoodes)
+        public LoaiHangModel(IListTypeGoods TypeGoodes)
         {
-            _typeGoodes = typeGoodes;
+            _typeGoodes = TypeGoodes;
         }
         public Action CongViec { get; private set; }
-        public TyGoods tygoods { get; set; }
-        public void OnGet(int id)
+        public TyGoods Tygoods { get; set; }
+        public void OnGet(string id)
         {
             CongViec = Action.ChiTiet;
-            tygoods = _typeGoodes.Get(id);
-            ViewData["Title"] = tygoods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {tygoods.tenLoaihang}";
+            Tygoods = _typeGoodes.Get(id);
+            ViewData["Title"] = Tygoods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Tygoods.TenLoaihang}";
         }
         public void OnGetCreate()
         {
             CongViec = Action.ThemMoi;
-            tygoods = new TyGoods();
+            Tygoods = new TyGoods();
             ViewData["Title"] = "Thêm loại hàng";
             ViewData["classLH"] = "classLH";
         }

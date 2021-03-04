@@ -8,8 +8,8 @@ namespace StoreManager.BUSINESS_SERVICES.Interface
 {
     public interface IRepositoryGoods
     {
-        public HashSet<Goods> Goodes { get; set; }
-        public Goods Get(int id);
+        public HashSet<Goods> Goodses { get; set; }
+        public Goods Get(string id);
 
     }
 }

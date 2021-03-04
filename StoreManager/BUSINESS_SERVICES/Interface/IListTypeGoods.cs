@@ -8,7 +8,7 @@ namespace StoreManager.BUSINESS_SERVICES.Interface
 {
     public interface IListTypeGoods
     {
-        public HashSet<TyGoods> dsLoaiHang { get; set; }
-        public TyGoods Get(int id);
+        public HashSet<TyGoods> DsLoaiHang { get; set; }
+        public TyGoods Get(string id);
     }
 }

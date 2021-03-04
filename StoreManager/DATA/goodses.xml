@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<ArrayOfGoods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Goods>
+    <MaHangHoa>HH.D040321.0001</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0002</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0003</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0004</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0005</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0006</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0007</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0008</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0009</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0010</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0011</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+  <Goods>
+    <MaHangHoa>HH.D040321.0012</MaHangHoa>
+    <TenHangHoa>Rượi</TenHangHoa>
+    <HanSuDung>
+      <Ngay>12</Ngay>
+      <Thang>5</Thang>
+      <Nam>2025</Nam>
+    </HanSuDung>
+    <CtySanXuat>Apple</CtySanXuat>
+    <NamSanXuat>2020</NamSanXuat>
+    <LoaiHangHoa>Thực Phẩm</LoaiHangHoa>
+  </Goods>
+</ArrayOfGoods>

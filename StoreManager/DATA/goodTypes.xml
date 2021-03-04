@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ArrayOfTyGoods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0001</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0002</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0003</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0004</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0005</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0006</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0007</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0008</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+  <TyGoods>
+    <MaLoaiHang>LH.D040321.0009</MaLoaiHang>
+    <TenLoaihang>Đồ Uống</TenLoaihang>
+    <MoTaLoaihang>thức uống dinh dưỡng</MoTaLoaihang>
+  </TyGoods>
+</ArrayOfTyGoods>

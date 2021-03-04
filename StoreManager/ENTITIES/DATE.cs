@@ -7,14 +7,14 @@ namespace StoreManager.ENTITIES
 {
     public struct DATE
     {
-        public int ngay;
-        public int thang;
-        public int nam;
+        public int Ngay;
+        public int Thang;
+        public int Nam;
         public DATE(int a, int b, int c)
         {
-            ngay = a;
-            thang = b;
-            nam = c;
+            Ngay = a;
+            Thang = b;
+            Nam = c;
 
         }
     }

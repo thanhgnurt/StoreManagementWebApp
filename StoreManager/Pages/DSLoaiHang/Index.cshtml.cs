@@ -12,11 +12,11 @@ namespace StoreManager.Pages.DSLoaiHang
     public class IndexModel : PageModel
     {
         public readonly IListTypeGoods _listTypeGood;
-        public HashSet<TyGoods> dsLoaiHang;
-        public IndexModel(IListTypeGoods listTypeGoods)
+        public HashSet<TyGoods> DsLoaiHang;
+        public IndexModel(IListTypeGoods ListTypeGoods)
         {
-            _listTypeGood = listTypeGoods;
-            dsLoaiHang = listTypeGoods.dsLoaiHang;
+            _listTypeGood = ListTypeGoods;
+            DsLoaiHang = ListTypeGoods.DsLoaiHang;
         }
     }
 }

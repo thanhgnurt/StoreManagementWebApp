@@ -17,7 +17,7 @@ namespace StoreManager.Pages.DSHangHoa
         public IndexModel(IRepositoryGoods khoHang)
         {
             _khohang = khoHang;
-            dshangHoa = _khohang.Goodes;
+            dshangHoa = _khohang.Goodses;
         }
         public void OnPost(List<int> selecthanghoa)
         {

@@ -1,1 +1,64 @@
 ﻿
+.footer {
+    position: absolute;
+    color: white;
+}
+
+.containerMain {
+    min-height: calc(100vh - 61px);
+}
+
+    .containerMain a {
+        font-size: 14px;
+    }
+
+.iconHome a {
+    font-size: 25px;
+}
+
+    .iconHome a :hover {
+        color: rgb(198, 116, 34);
+    }
+
+.itemMenu a {
+    font-size: 15px;
+    border: 1px solid white;
+}
+
+    .itemMenu a :hover {
+        color: rgb(198, 116, 34);
+    }
+
+.text_12 {
+    font-size: 12px;
+}
+
+.input_search {
+    min-width: 300px;
+    width: 300px;
+}
+
+.classLH {
+    border: 1px solid black !important;
+}
+
+.classHH {
+    border: 1px solid black !important;
+}
+
+.atIndex a {
+    color: rgb(28, 53, 254) !important;
+}
+
+.page_navigation {
+    text-align: center;
+}
+
+.containerHangHoa {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.table_line {
+    line-height: 30px !important;
+}
