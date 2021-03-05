@@ -7,15 +7,35 @@ using StoreManager.DATA_ACCESS;
 
 namespace StoreManager.BUSINESS_SERVICES.TypeGoods
 {
-    public class ListTypeGoods : HandleFileTypeGoods,IListTypeGoods
+    public class ListTypeGoods : HandleFileTypeGoods, IListTypeGoods
     {
-        public HashSet<TyGoods> DsLoaiHang { get; set; } = ReadFileTyGoods();
+        public static readonly TyGoods TyGoodsNull = new TyGoods();
 
-
-
+        private HashSet<TyGoods> _tyGoodses;
+        public HashSet<TyGoods> TyGoodses
+        {
+            get
+            {
+                return _tyGoodses;
+            }
+            set
+            {
+                _tyGoodses = value;
+            }
+        }
+        public ListTypeGoods()
+        {
+            _tyGoodses = ReadFileTyGoods();
+        }
         public TyGoods Get(string id)
         {
-            return DsLoaiHang.SingleOrDefault(loaiHang => loaiHang.MaLoaiHang == id);
+            return _tyGoodses.SingleOrDefault(loaiHang => loaiHang.MaLoaiHang == id);
+        }
+        public void Add(TyGoods tyGoods)
+        {
+            tyGoods.MaLoaiHang = tyGoods.MakeId();
+            _tyGoodses.Add(tyGoods);
+            SaveChangeGoods(_tyGoodses);
         }
     }
 }

@@ -9,22 +9,15 @@ namespace StoreManager.DATA_ACCESS
 {
     public class HandleFileTypeGoods : HandleFile<TyGoods>
     {
-        public static HashSet<TyGoods> DataTemplate = new HashSet<TyGoods>
-        {
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-            new TyGoods{ TenLoaihang = "Đồ Uống", MoTaLoaihang="thức uống dinh dưỡng" },
-        };
+
         public static HashSet<TyGoods> ReadFileTyGoods()
         {
-            HashSet<TyGoods> Goodses = ReadFile(ConstantPath.pathFileGoodsType);
-            return Goodses;
+            HashSet<TyGoods> TyGoodses = ReadFile(Constant.Path.pathFileGoodsType);
+            return TyGoodses;
+        }
+        public static void SaveChangeGoods(HashSet<TyGoods> tyGoods)
+        {
+            SaveChange(Constant.Path.pathFileGoodsType, tyGoods);
         }
     }
 

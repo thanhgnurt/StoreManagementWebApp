@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using StoreManager.BUSINESS_SERVICES.Common;
+using StoreManager.CONSTANT;
 
 namespace StoreManager.BUSINESS_SERVICES.TypeGoods
 {
@@ -14,11 +15,14 @@ namespace StoreManager.BUSINESS_SERVICES.TypeGoods
 
         private static int _numberAuto = 1;
 
-        public TyGoods() : this("Default Name") { }
-        public TyGoods(string tenLoaiHang)
+        
+        public string MakeId()
         {
-            TenLoaihang = tenLoaiHang;
-            CodeHead = "LH." + tenLoaiHang[0].ToString().ToUpper();
+            if(TenLoaihang!=null)
+            CodeHead = Constant.CodeHead.tyGoods + TenLoaihang[0].ToString().ToUpper();
+            else
+            CodeHead = Constant.CodeHead.tyGoods + "N";
+
             DateTime dayNow = DateTime.Now;
             if (dayBase.Day != dayNow.Day || dayBase.Year != dayNow.Year)
             {
@@ -27,10 +31,8 @@ namespace StoreManager.BUSINESS_SERVICES.TypeGoods
             }
             MaLoaiHang = ConcatString(CodeHead, ConcatNum(dayBase.Day.ToString(), 2), ConcatNum(dayBase.Month.ToString(), 2), CutString(dayBase.Year.ToString(), 2, 3),".", ConcatNum(_numberAuto.ToString(), 4));
             _numberAuto++;
+            return MaLoaiHang;
         }
-        ~TyGoods()
-        {
-            _numberAuto--;
-        }
+ 
     }
 }

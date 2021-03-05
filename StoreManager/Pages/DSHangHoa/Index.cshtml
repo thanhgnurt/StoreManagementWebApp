@@ -36,7 +36,7 @@
                 @{
 
 
-                    foreach (var hangHoa in Model.dshangHoa)
+                    foreach (var hangHoa in Model.listGoods)
                     {
                         <tr class="" id="hanghoa+@hangHoa.MaHangHoa">
                             <td class="" scope="row">@{CheckBox(hangHoa.MaHangHoa);}</td>
@@ -77,9 +77,9 @@
 </div>
 
 @{
-    if (Model.selectHangHoa != null)
+    if (Model.selectHH != null)
     {
-        <h2>@Model.selectHangHoa[0] kkkkkkkkkk</h2>
+        <h2>@Model.selectHH[0] kkkkkkkkkk</h2>
     }
 }
 

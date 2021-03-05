@@ -6,9 +6,8 @@ using StoreManager.BUSINESS_SERVICES.TypeGoods;
 
 namespace StoreManager.BUSINESS_SERVICES.Interface
 {
-    public interface IListTypeGoods
+    public interface IListTypeGoods : ICreateReadUpdateDelete<TyGoods>
     {
-        public HashSet<TyGoods> DsLoaiHang { get; set; }
-        public TyGoods Get(string id);
+        public HashSet<TyGoods> TyGoodses { get; set; }
     }
 }

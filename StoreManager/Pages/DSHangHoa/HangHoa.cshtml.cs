@@ -6,30 +6,29 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StoreManager.BUSINESS_SERVICES.Interface;
 using StoreManager.BUSINESS_SERVICES.RepoGoods;
+using StoreManager.Pages._Common;
 
 namespace StoreManager.Pages.DSHangHoa
 {
     public class HangHoaModel : PageModel
     {
-        public enum Action { Detail, Delete, Update, Create };
-
-        public readonly IRepositoryGoods _khoHang;
+        private readonly IRepositoryGoods _khoHang;
         public HangHoaModel(IRepositoryGoods KhoHang)
         {
             _khoHang = KhoHang;
         }
-        public Action CongViec { get; private set; }
+        public Enumuration.Action Job { get; private set; }
         public Goods Goods { get; set; }
         public void OnGet(string maHangHoa)
         {
-            CongViec = Action.Detail;
+            Job = Enumuration.Action.Detail;
             Goods = _khoHang.Get(maHangHoa);
             ViewData["Title"] = Goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Goods.TenHangHoa}";
             ViewData["classHH"] = "classHH";
         }
         public void OnGetCreate()
         {
-            CongViec = Action.Create;
+            Job = Enumuration.Action.Create;
             Goods = RepositoryGoods.GoodsNull;
             ViewData["Title"] = "Thêm hàng hoá";
             ViewData["classHH"] = "classHH";

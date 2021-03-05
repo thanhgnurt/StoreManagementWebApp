@@ -1,13 +1,14 @@
 ﻿@page "/loaihang/{handler?}/{maLoaiHang?}"
 @model StoreManager.Pages.DSLoaiHang.LoaiHangModel
+@using StoreManager.Pages._Common
 <div style="margin: auto;" class="border border-light p-3 w-50 shadow">
-    @switch (Model.CongViec)
+    @switch (Model.Job)
     {
-        case LoaiHangModel.Action.ChiTiet:
+        case Enumuration.Action.Detail:
             template(readOnly: true, errorMessage: "Không tìm thấy cuốn sách bạn yêu cầu.");
             <a class="btn btn-info btn-block mb-2" href="/">Return</a>
             break;
-        case LoaiHangModel.Action.Xoa:
+        case Enumuration.Action.Delete:
             template(readOnly: true, errorMessage: "Không tìm thấy cuốn sách bạn yêu cầu.");
             if (Model.Tygoods != null)
             {
@@ -16,10 +17,10 @@
             }
             <a class="btn btn-info btn-block mb-2" href="/">Return</a>
             break;
-        case LoaiHangModel.Action.ThemMoi:
+        case Enumuration.Action.Create:
             await form("create");
             break;
-        case LoaiHangModel.Action.CapNhat:
+        case Enumuration.Action.Update:
             await form("update");
             break;
     }
@@ -35,27 +36,28 @@
         }
         <input name="id" type="hidden" value="@Model.Tygoods.MaLoaiHang" />
         <p class="h4 text-center mb-4">@Model.Tygoods.TenLoaihang</p>
-        <label for="nameHH" class="">Tên Hàng Hoá</label>
-        <input name="nameHH" type="text" class="form-control mb-2" value="@Model.Tygoods.MaLoaiHang" @(readOnly ? "readonly" : "") />
-        <label for="useDate" class="">Hạn sử dụng</label>
-        <input name="useDate" type="text" class="form-control mb-2" value="@Model.Tygoods.TenLoaihang" @(readOnly ? "readonly" : "") />
-        <label for="company" class="">Công ty sản xuất</label>
-        <input name="company" type="text" class="form-control mb-2" value="@Model.Tygoods.TenLoaihang" @(readOnly ? "readonly" : "") />
-        <label for="year" class="">Năm sản xuất</label>
-        <input name="year" type="number" class="form-control mb-2" value="@Model.Tygoods.TenLoaihang" @(readOnly ? "readonly" : "") />
-        <label for="loaiHH" class="">Loại hàng hoá</label>
-        <input name="loaiHH" type="text" class="form-control mb-2" value="@Model.Tygoods.TenLoaihang" @(readOnly ? "readonly" : "") />
-    }}
+        <label for="TenLoaihang" class="">Tên Loại Hàng</label>
+        <input name="TenLoaihang" type="text" class="form-control mb-2" value="@Model.Tygoods.TenLoaihang" @(readOnly ? "readonly" : "") />
+        <label for="MoTaLoaihang">Mô tả loại hàng</label>
+        <textarea class="form-control mb-5" name="MoTaLoaihang" rows="5">@Model.Tygoods.MoTaLoaihang</textarea>
+
+
+    }
+}
 
 
 @{
     async Task form(string handler)
     {
-        <form method="post" href="?handler=@handler">
+
+        <form method="post" href="?handler=@handler" class="">
             @{template(false); }
-            <button type="submit" class="btn btn-primary btn-block mb-2">Save</button>
-            <button type="reset" class="btn btn-secondary btn-block mb-2">Reset</button>
+            <div class="d-flex flex-row-reverse">
+                <button type="submit" class="btn btn-primary ml-2 mb-2">Save</button>
+                <button type="reset" class="btn btn-secondary ml-2 mb-2">Reset</button>
+                <a class="btn btn-info ml-2  mb-2" href="/">Return</a>
+            </div>
+
         </form>
-        <a class="btn btn-info btn-block mb-2" href="/">Return</a>
     }
 }

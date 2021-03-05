@@ -11,13 +11,13 @@ namespace StoreManager.Pages.DSHangHoa
 {
     public class IndexModel : PageModel
     {
-        public readonly IRepositoryGoods _khohang;
-        public List<int> selectHangHoa { get; private set; } = null;
-        public HashSet<Goods> dshangHoa;
+        private readonly IRepositoryGoods _goodses;
+        public List<int> selectHH { get; private set; } = null;
+        public HashSet<Goods> listGoods;
         public IndexModel(IRepositoryGoods khoHang)
         {
-            _khohang = khoHang;
-            dshangHoa = _khohang.Goodses;
+            _goodses = khoHang;
+            listGoods = _goodses.Goodses;
         }
         public void OnPost(List<int> selecthanghoa)
         {
@@ -25,12 +25,12 @@ namespace StoreManager.Pages.DSHangHoa
             {
                 if (selecthanghoa.Count > 0)
                 {
-                    selectHangHoa = selecthanghoa;
+                    selectHH = selecthanghoa;
                 }
             }
             catch
             {
-                selectHangHoa = null;
+                selectHH = null;
             }
           
         }

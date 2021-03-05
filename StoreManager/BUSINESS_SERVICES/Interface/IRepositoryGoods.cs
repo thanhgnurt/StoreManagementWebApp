@@ -6,11 +6,8 @@ using StoreManager.BUSINESS_SERVICES.RepoGoods;
 
 namespace StoreManager.BUSINESS_SERVICES.Interface
 {
-    public interface IRepositoryGoods
+    public interface IRepositoryGoods : ICreateReadUpdateDelete<Goods>
     {
         public HashSet<Goods> Goodses { get; set; }
-        public Goods Get(string id);
-        public void Add(Goods goods);
-
     }
 }

@@ -6,32 +6,38 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StoreManager.BUSINESS_SERVICES.Interface;
 using StoreManager.BUSINESS_SERVICES.TypeGoods;
+using StoreManager.Pages._Common;
 
 namespace StoreManager.Pages.DSLoaiHang
 {
     public class LoaiHangModel : PageModel
     {
-        public enum Action { ChiTiet, Xoa, CapNhat, ThemMoi };
-
         public readonly IListTypeGoods _typeGoodes;
         public LoaiHangModel(IListTypeGoods TypeGoodes)
         {
             _typeGoodes = TypeGoodes;
         }
-        public Action CongViec { get; private set; }
+        public Enumuration.Action Job { get; private set; }
         public TyGoods Tygoods { get; set; }
         public void OnGet(string id)
         {
-            CongViec = Action.ChiTiet;
+            Job = Enumuration.Action.Detail;
             Tygoods = _typeGoodes.Get(id);
             ViewData["Title"] = Tygoods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Tygoods.TenLoaihang}";
         }
         public void OnGetCreate()
         {
-            CongViec = Action.ThemMoi;
-            Tygoods = new TyGoods();
+            Job = Enumuration.Action.Create;
+            Tygoods = ListTypeGoods.TyGoodsNull;
             ViewData["Title"] = "Thêm loại hàng";
             ViewData["classLH"] = "classLH";
+        }
+
+        public IActionResult OnPostCreate(TyGoods tyGoods)
+        {
+
+            _typeGoodes.Add(tyGoods);
+            return new RedirectToPageResult("index");
         }
     }
 }

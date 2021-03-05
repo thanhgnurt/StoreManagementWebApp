@@ -30,6 +30,7 @@
         }
         public void Add(Goods goods)
         {
+            goods.MaHangHoa = goods.MakeId();
             _goodses.Add(goods);
             SaveChangeGoods(_goodses);
         }

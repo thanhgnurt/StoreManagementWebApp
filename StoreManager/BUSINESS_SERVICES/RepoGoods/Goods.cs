@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using StoreManager.ENTITIES;
 using StoreManager.BUSINESS_SERVICES.Common;
+using StoreManager.CONSTANT;
 
 
 namespace StoreManager.BUSINESS_SERVICES.RepoGoods
@@ -20,12 +21,15 @@ namespace StoreManager.BUSINESS_SERVICES.RepoGoods
         public int NamSanXuat { get; set; }
         public string LoaiHangHoa { get; set; }
 
-        private static int _numberAuto = 0;
-        public Goods() : this("Default Name") { }
-        public Goods(string tenHangHoa)
+        private static int _numberAuto = 1;
+        public string MakeId ()
         {
-            TenHangHoa = tenHangHoa;
-            CodeHead = "HH." + TenHangHoa[0].ToString().ToUpper();
+
+            if (TenHangHoa != null)
+            CodeHead = Constant.CodeHead.goods + TenHangHoa[0].ToString().ToUpper();
+            else
+            CodeHead = Constant.CodeHead.goods + "N";
+
             DateTime dayNow = DateTime.Now;
             if (dayBase.Day != dayNow.Day || dayBase.Year != dayNow.Year)
             {
@@ -35,8 +39,10 @@ namespace StoreManager.BUSINESS_SERVICES.RepoGoods
                 dayBase = DateTime.Now;
             }
 
-            MaHangHoa = ConcatString(CodeHead, ConcatNum(dayBase.Day.ToString(), 2), ConcatNum(dayBase.Month.ToString(), 2), CutString(dayBase.Year.ToString(), 2, 3),".", ConcatNum(_numberAuto.ToString(), 4));
+            MaHangHoa = ConcatString(CodeHead, ConcatNum(dayBase.Day.ToString(), 2), ConcatNum(dayBase.Month.ToString(), 2), 
+                        CutString(dayBase.Year.ToString(), 2, 3),".", ConcatNum(_numberAuto.ToString(), 4));
             _numberAuto++;
+            return MaHangHoa;
         }
 
 

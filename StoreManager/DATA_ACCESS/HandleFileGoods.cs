@@ -13,13 +13,14 @@ namespace StoreManager.DATA_ACCESS
        
         public static HashSet<Goods> ReadFileGoods()
         {
-            HashSet<Goods> Goodses =  ReadFile(ConstantPath.pathFileGoods);
+            HashSet<Goods> Goodses =  ReadFile(Constant.Path.pathFileGoods);
             return Goodses;
 
         }
         public static void SaveChangeGoods(HashSet<Goods> goodses)
         {
-            SaveChange(ConstantPath.pathFileGoods, goodses);
+
+            SaveChange(Constant.Path.pathFileGoods, goodses);
         }
 
     }

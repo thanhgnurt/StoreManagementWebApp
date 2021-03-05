@@ -9,6 +9,7 @@ using StoreManager.BUSINESS_SERVICES.Common;
 using StoreManager.BUSINESS_SERVICES.RepoGoods;
 using System.Xml;
 using StoreManager.DATA_ACCESS;
+using Newtonsoft.Json;
 
 namespace StoreManager.DATA_ACCESS
 {
@@ -22,14 +23,22 @@ namespace StoreManager.DATA_ACCESS
             HashSet<T> data = new HashSet<T>();
             if (!File.Exists(pathFile))
             {
-                using var streamCreate = File.Create(pathFile);
-                _serializer.Serialize(streamCreate, data);
+                JsonSerializer ser = new JsonSerializer();
+                using (StreamWriter sWriter = new StreamWriter(pathFile))
+                using (JsonWriter jWriter = new JsonTextWriter(sWriter))
+                {
+                    ser.Serialize(jWriter, data);
+                }
 
             }
             else
             {
-                using var streamRead = File.OpenRead(pathFile);
-                data = _serializer.Deserialize(streamRead) as HashSet<T>;
+                JsonSerializer ser = new JsonSerializer();
+                using (StreamReader sReader = new StreamReader(pathFile))
+                using (JsonReader jReader = new JsonTextReader(sReader))
+                {
+                    return ser.Deserialize<HashSet<T>>(jReader);
+                }
             }
 
 
@@ -37,8 +46,14 @@ namespace StoreManager.DATA_ACCESS
         }
         protected static void SaveChange(string pathFile,HashSet<T> data)
         {
-            using var streamCreate = File.Create(pathFile);
-            _serializer.Serialize(streamCreate, data);
+     
+            JsonSerializer ser= new JsonSerializer();
+            using (StreamWriter sWriter = new StreamWriter(pathFile))
+            using (JsonWriter jWriter = new JsonTextWriter(sWriter))
+            {
+                ser.Serialize(jWriter, data);
+            }
+
         }
     }
 
