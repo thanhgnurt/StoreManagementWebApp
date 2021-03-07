@@ -13,7 +13,7 @@
             if (Model.Tygoods != null)
             {
                 <p class="text-danger text-center">Bạn thực sự muốn xóa cuốn sách này?</p>
-                <a class="btn btn-danger btn-block mb-2" href="/book/@Model.Tygoods.MaLoaiHang?handler=deleteConfirm">Delete</a>
+                <a class="btn btn-danger btn-block mb-2" href="/book/@Model.Tygoods.MaLH?handler=deleteConfirm">Delete</a>
             }
             <a class="btn btn-info btn-block mb-2" href="/">Return</a>
             break;
@@ -34,12 +34,12 @@
             <p class="h5 text-center text-danger mb-4">@errorMessage</p>
             return;
         }
-        <input name="id" type="hidden" value="@Model.Tygoods.MaLoaiHang" />
-        <p class="h4 text-center mb-4">@Model.Tygoods.TenLoaihang</p>
-        <label for="TenLoaihang" class="">Tên Loại Hàng</label>
-        <input name="TenLoaihang" type="text" class="form-control mb-2" value="@Model.Tygoods.TenLoaihang" @(readOnly ? "readonly" : "") />
-        <label for="MoTaLoaihang">Mô tả loại hàng</label>
-        <textarea class="form-control mb-5" name="MoTaLoaihang" rows="5">@Model.Tygoods.MoTaLoaihang</textarea>
+        <input name="id" type="hidden" value="@Model.Tygoods.MaLH" />
+        <p class="h4 text-center mb-4">@Model.Tygoods.TenLH</p>
+        <label for="TenLH" class="">Tên Loại Hàng</label>
+        <input name="TenLH" type="text" class="form-control mb-2" value="@Model.Tygoods.TenLH" @(readOnly ? "readonly" : "") />
+        <label for="MoTa">Mô tả loại hàng</label>
+        <textarea class="form-control mb-5" name="MoTa" rows="5">@Model.Tygoods.MoTa</textarea>
 
 
     }

@@ -31,10 +31,10 @@
                     foreach (var loaiHang in Model.tyGoodses)
                     {
                         <tr>
-                            <th scope="row">@{CheckBox(loaiHang.MaLoaiHang);}</th>
-                            <td>@loaiHang.TenLoaihang</td>
-                            <td>@loaiHang.MoTaLoaihang</td>
-                            <td>@{ButtonEditDelete(loaiHang.MaLoaiHang);}</td>
+                            <th scope="row">@{CheckBox(loaiHang.MaLH);}</th>
+                            <td>@loaiHang.TenLH</td>
+                            <td>@loaiHang.MoTa</td>
+                            <td>@{ButtonEditDelete(loaiHang.MaLH);}</td>
                         </tr>
                     }
                 }

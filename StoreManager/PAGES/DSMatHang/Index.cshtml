@@ -1,0 +1,145 @@
+﻿@page 
+@using StoreManager.ENTITIES
+@using StoreManager.Pages._Common
+@model StoreManager.Pages.DSMatHang.IndexModel
+@{
+    ViewData["Title"] = "Quản lý hàng hoá";
+    ViewData["classHH"] = "classHH";
+    int currentPage = Convert.ToInt32(ViewData["page"]);
+    int totalPage = Convert.ToInt32(ViewData["pages"]);
+}
+
+<div class="containerHangHoa">
+    <div class="row">
+        <form class="form-inline mb-2 col-6 text_12 " action="/action_page.php">
+            <input class="form-control mr-sm-2 text_12 input_search" type="text" placeholder=" Tìm kiếm hàng hoá ...">
+            <button class="btn btn-secondary text_12" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="col-6">
+            <a type="button" class="btn mr-2 text_12 btn-outline-primary" href="/mathang/create">
+                <i class="fas fa-plus mr-1"></i>Thêm Hàng Hoá
+            </a>
+        </div>
+    </div>
+    <form method="post">
+        <table class="table table-sm  table-striped table-hover table-bordered text_12 table_line">
+            <thead class="thead-dark text_12 ">
+                <tr class="">
+                    <th scope="col" class="">Mã hàng hoá</th>
+                    <th scope="col" class="">Tên Hàng Hoá</th>
+                    <th scope="col" class="">Hạn Dùng</th>
+                    <th scope="col" class="">CTy Sản Xuất</th>
+                    <th scope="col" class="">Năm Sản Xuất</th>
+                    <th scope="col" class="">Loại Hàng</th>
+                    <th scope="col" class="">Chức Năng</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @{
+
+                    foreach (var hangHoa in Model.listGoods)
+                    {
+                        <tr class="" id="hanghoa+@hangHoa.MaMH">
+                            <td class="" scope="row">@{CheckBox(hangHoa.MaMH);}</td>
+                            <td class="">@hangHoa.TenMH</td>
+                            <td class="">@HandleDate.ToStringDate(hangHoa.HanSD)</td>
+                            <td class="">@hangHoa.CtySX</td>
+                            <td class="">@HandleDate.ToStringDate(hangHoa.NgaySX)</td>
+                            <td class="">@hangHoa.LoaiHang</td>
+                            <td class="">@{ButtonFunction(hangHoa.MaMH);}</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-danger mr-2 text_12">
+                    <i class="fas fa-trash-alt mr-1"></i> Xoá Danh Sách Chọn
+                </button>
+            </div>
+            <div class="col">
+                <nav aria-label="Page navigation example" class="page_navigation">
+                    <ul class="pagination">
+                        @{ListPagination(currentPage, totalPage);}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </form>
+</div>
+
+@{
+    if (Model.selectHH != null)
+    {
+        <h2>@Model.selectHH[0] kkkkkkkkkk</h2>
+    }
+}
+
+<!--CheckBox-->
+@{
+    void CheckBox(string id)
+    {
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id=@id name="selectHangHoa" value=@id />
+            <label class="custom-control-label" for=@id>@id</label>
+        </div>
+    }
+}
+
+@{
+    void ButtonFunction(string id)
+    {
+
+        <a class="btn mr-2 text_12" href="/mathang/edit/@id">
+            @* Edit *@
+            <i class="fa fa-edit"></i>
+        </a>
+        <a class="btn mr-2 text_12" href="/mathang/detail/@id">
+            @* Detail *@
+            <i class="fas fa-info-circle"></i>
+        </a>
+        <a class="btn  mr-2 text_12" href="/mathang/delete/@id">
+            @* Delete *@
+            <i class="fa fa-trash-alt"></i>
+        </a>
+    }
+}
+
+@{
+    void ListPagination(int page, int size)
+    {
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
+
+        if (currentPage > 1)
+        {
+            num1 = currentPage - 1;
+            num2 = currentPage;
+            num3 = currentPage + 1;
+        }
+        else
+        {
+            num1 = currentPage;
+            num2 = currentPage + 1;
+            num3 = currentPage + 2;
+
+        }
+        <li class="page-item @(num1==currentPage?"disabled":"")">
+            <a class="page-link " href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="/dsmathang/?trang=@num1">@num1</a></li>
+        <li class="page-item @(num1== totalPage?"disabled":"") "><a class="page-link" href="/dsmathang/?trang=@num2">@num2</a></li>
+        <li class="page-item @(num2==totalPage?"disabled":"")"><a class="page-link" href="/dsmathang/?trang=@num3">@num3</a></li>
+        <li class="page-item @(num3==totalPage || num2==totalPage|| num1==totalPage?"disabled":"")">
+            <a class="page-link ") href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+
+    }
+}

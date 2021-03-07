@@ -2,22 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using StoreManager.BUSINESS_SERVICES.TypeGoods;
+using StoreManager.BUSINESS_SERVICES.TypeOfGoods;
 using StoreManager.CONSTANT;
 
 namespace StoreManager.DATA_ACCESS
 {
-    public class HandleFileTypeGoods : HandleFile<TyGoods>
+    public class HandleFileTypeGoods : HandleFile<TypeGoods>
     {
 
-        public static HashSet<TyGoods> ReadFileTyGoods()
+        public static HashSet<TypeGoods> ReadFileTyGoods()
         {
-            HashSet<TyGoods> TyGoodses = ReadFile(Constant.Path.pathFileGoodsType);
-            return TyGoodses;
+            HashSet<TypeGoods> listTyGoods = ReadFile(Constant.Path.TYPES_OF_GOODS);
+            return listTyGoods;
         }
-        public static void SaveChangeGoods(HashSet<TyGoods> tyGoods)
+        public static void SaveChangeGoods(HashSet<TypeGoods> tyGoods)
         {
-            SaveChange(Constant.Path.pathFileGoodsType, tyGoods);
+            SaveChange(Constant.Path.TYPES_OF_GOODS, tyGoods);
         }
     }
 

@@ -6,7 +6,7 @@ using System.IO;
 using System.Xml.Serialization;
 using System.Linq.Dynamic.Core;
 using StoreManager.BUSINESS_SERVICES.Common;
-using StoreManager.BUSINESS_SERVICES.RepoGoods;
+using StoreManager.BUSINESS_SERVICES.Commodity;
 using System.Xml;
 using StoreManager.DATA_ACCESS;
 using Newtonsoft.Json;

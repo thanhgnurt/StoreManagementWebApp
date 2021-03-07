@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DATA\" />
+    <Folder Include="DATA_ACCESS\DATA\" />
   </ItemGroup>
 
 </Project>

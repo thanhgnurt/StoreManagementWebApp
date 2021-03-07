@@ -5,27 +5,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StoreManager.BUSINESS_SERVICES.Interface;
-using StoreManager.BUSINESS_SERVICES.RepoGoods;
+using StoreManager.BUSINESS_SERVICES.Commodity;
 using StoreManager.Pages._Common;
 
-namespace StoreManager.Pages.DSHangHoa
+namespace StoreManager.Pages.DSMatHang
 {
-    public class HangHoaModel : PageModel
+    public class MatHangModel : PageModel
     {
         private readonly IRepositoryGoods _khoHang;
-        public HangHoaModel(IRepositoryGoods KhoHang)
+        public MatHangModel(IRepositoryGoods KhoHang)
         {
             _khoHang = KhoHang;
         }
         public Enumuration.Action Job { get; private set; }
         public Goods Goods { get; set; }
-        public void OnGet(string maHangHoa)
+        public void OnGet(string id)
         {
             Job = Enumuration.Action.Detail;
-            Goods = _khoHang.Get(maHangHoa);
-            ViewData["Title"] = Goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Goods.TenHangHoa}";
+            Goods = _khoHang.Get(id);
+            Console.WriteLine("get " + Goods.NgaySX);
+            ViewData["Title"] = Goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Goods.TenMH}";
             ViewData["classHH"] = "classHH";
         }
+
         public void OnGetCreate()
         {
             Job = Enumuration.Action.Create;
@@ -33,11 +35,12 @@ namespace StoreManager.Pages.DSHangHoa
             ViewData["Title"] = "Thêm hàng hoá";
             ViewData["classHH"] = "classHH";
         }
+  
         public IActionResult OnPostCreate(Goods goods)
         {
-
+            
             _khoHang.Add(goods);
-            return new RedirectToPageResult("index");
+            return new RedirectToPageResult("Index");
         }
 
     }

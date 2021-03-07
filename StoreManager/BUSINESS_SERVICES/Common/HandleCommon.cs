@@ -1,15 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace StoreManager.BUSINESS_SERVICES.Common
+﻿namespace StoreManager.BUSINESS_SERVICES.Common
 {
-    public class HandleCommon
+    using System;
+
+    /// <summary>
+    /// Defines the <see cref="HandleCommon" />.
+    /// </summary>
+    public class HandleCommon 
     {
+        /// <summary>
+        /// Defines the CodeHead.
+        /// </summary>
         protected string CodeHead;
 
+        /// <summary>
+        /// Defines the dayBase.
+        /// </summary>
         protected static DateTime dayBase = DateTime.Now;
+
+        /// <summary>
+        /// The ConcatString.
+        /// </summary>
+        /// <param name="listString">The listString<see cref="string[]"/>.</param>
+        /// <returns>The <see cref="string"/>.</returns>
         protected string ConcatString(params string[] listString)
         {
             string resultString = "";
@@ -19,17 +31,21 @@ namespace StoreManager.BUSINESS_SERVICES.Common
             }
             return resultString;
         }
-        protected string ConcatNum(string num, int len)
-        {
-            if (num.Length <= len)
-            {
-                for (int i = num.Length; i < len; i++)
-                {
-                    num = "0" + num;
-                }
-            }
-            return num;
-        }
+
+        /// <summary>
+        /// The ConcatNum.
+        /// </summary> Add stretching chain example 1=001
+        /// <param name="num">The num<see cref="string"/>.</param>
+        /// <param name="len">The len<see cref="int"/>.</param>
+        /// <returns>The <see cref="string"/>.</returns>
+
+        /// <summary>
+        /// The CutString.
+        /// </summary>
+        /// <param name="input">The input<see cref="string"/>.</param>
+        /// <param name="indexStart">The indexStart<see cref="int"/>.</param>
+        /// <param name="indexEnd">The indexEnd<see cref="int"/>.</param>
+        /// <returns>The <see cref="string"/>.</returns>
         protected string CutString(string input, int indexStart, int indexEnd)
         {
             string output = "";

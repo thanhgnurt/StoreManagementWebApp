@@ -7,16 +7,18 @@ namespace StoreManager.CONSTANT
 {
     public static class Constant
     {
+        public const int MEMBER_PAGE = 10;
         public static class Path
         {
-            public const string pathFileGoods = @"Data\goodses.json";
-            public const string pathFileGoodsType = @"Data\goodTypes.json";
+            public const string REPOSITORY_GOODS = @"DATA_ACCESS\Data\repositoryGoods.json";
+            public const string TYPES_OF_GOODS = @"DATA_ACCESS\Data\typesOfGoods.json";
         }
-        public static class CodeHead
+        public static class CodeHeadDefault
         {
-            public const string goods = "HH.";
-            public const string tyGoods = "LH.";
+            public const string GOODS = "D";
+            public const string TYPE_GOODS = "D";
         }
+        
 
     }
     

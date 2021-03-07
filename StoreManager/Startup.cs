@@ -9,8 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using StoreManager.BUSINESS_SERVICES.Interface;
-using StoreManager.BUSINESS_SERVICES.RepoGoods;
-using StoreManager.BUSINESS_SERVICES.TypeGoods;
+using StoreManager.BUSINESS_SERVICES.Commodity;
+using StoreManager.BUSINESS_SERVICES.TypeOfGoods;
 
 namespace StoreManager
 {
@@ -30,7 +30,7 @@ namespace StoreManager
                 .AddRazorPages()
                 .AddRazorRuntimeCompilation();
             services.AddSingleton<IRepositoryGoods, RepositoryGoods>();
-            services.AddSingleton<IListTypeGoods, ListTypeGoods>();
+            services.AddSingleton<ITypeOfGoods, TypesGoods>();
 
         }
 
