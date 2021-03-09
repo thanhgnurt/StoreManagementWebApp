@@ -10,7 +10,7 @@ namespace StoreManager.Pages.DSMatHang
     {
         private readonly IRepositoryGoods _repositoryGoods;
 
-        public List<int> selectHH { get; private set; } = null;
+        public List<int> selectMH { get; private set; } = null;
         public Goods[] listGoods;
 
         public IndexModel(IRepositoryGoods repositoryGoods)
@@ -21,7 +21,6 @@ namespace StoreManager.Pages.DSMatHang
 
         public void OnGet(int trang = 1)
         {
-            Console.WriteLine(trang);
             var listPage = _repositoryGoods.DivideData(_repositoryGoods.ListGoods,trang, 10);
             ViewData["pages"] = listPage.pages;
             ViewData["page"] = listPage.page;
@@ -37,12 +36,12 @@ namespace StoreManager.Pages.DSMatHang
             {
                 if (selectGoods.Count > 0)
                 {
-                    selectHH = selectGoods;
+                    selectMH = selectGoods;
                 }
             }
             catch
             {
-                selectHH = null;
+                selectMH = null;
             }
         }
     }

@@ -11,16 +11,15 @@ namespace StoreManager.Pages.DSLoaiHang
 {
     public class IndexModel : PageModel
     {
-        private readonly ITypeOfGoods _listTypeGood;
+        private readonly ITypesOfGoods _listTypeGood;
         public TypeGoods[] TypeGoods;
-        public IndexModel(ITypeOfGoods ListTypeGoods, int page = 1)
+        public IndexModel(ITypesOfGoods ListTypeGoods, int page = 1)
         {
             _listTypeGood = ListTypeGoods;
             TypeGoods = _listTypeGood.DivideData(_listTypeGood.TypesOfGoods, 1, 10).listPage;
         }
         public void OnGet(int trang = 1)
         {
-            Console.WriteLine(trang);
             var listPage = _listTypeGood.DivideData(_listTypeGood.TypesOfGoods, trang, 10);
             ViewData["pages"] = listPage.pages;
             ViewData["page"] = listPage.page;

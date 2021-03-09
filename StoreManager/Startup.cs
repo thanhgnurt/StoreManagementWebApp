@@ -30,7 +30,7 @@ namespace StoreManager
                 .AddRazorPages()
                 .AddRazorRuntimeCompilation();
             services.AddSingleton<IRepositoryGoods, RepositoryGoods>();
-            services.AddSingleton<ITypeOfGoods, TypesGoods>();
+            services.AddSingleton<ITypesOfGoods, TypesGoods>();
 
         }
 

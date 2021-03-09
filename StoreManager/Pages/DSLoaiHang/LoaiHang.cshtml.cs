@@ -12,8 +12,8 @@ namespace StoreManager.Pages.DSLoaiHang
 {
     public class LoaiHangModel : PageModel
     {
-        public readonly ITypeOfGoods _typesOfGoods;
-        public LoaiHangModel(ITypeOfGoods TypeGoodes)
+        public readonly ITypesOfGoods _typesOfGoods;
+        public LoaiHangModel(ITypesOfGoods TypeGoodes)
         {
             _typesOfGoods = TypeGoodes;
         }

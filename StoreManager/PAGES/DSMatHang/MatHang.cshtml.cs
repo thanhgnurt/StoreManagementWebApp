@@ -7,22 +7,27 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using StoreManager.BUSINESS_SERVICES.Interface;
 using StoreManager.BUSINESS_SERVICES.Commodity;
 using StoreManager.Pages._Common;
+using StoreManager.BUSINESS_SERVICES.TypeOfGoods;
 
 namespace StoreManager.Pages.DSMatHang
 {
     public class MatHangModel : PageModel
     {
-        private readonly IRepositoryGoods _khoHang;
-        public MatHangModel(IRepositoryGoods KhoHang)
+        private readonly IRepositoryGoods _repositoryGoods;
+        private readonly ITypesOfGoods _typeOfGoods;
+        public HashSet<TypeGoods> ListTypeGoods;
+        public MatHangModel(IRepositoryGoods repo, ITypesOfGoods tysGoods)
         {
-            _khoHang = KhoHang;
+            _repositoryGoods = repo;
+            _typeOfGoods = tysGoods;
+            ListTypeGoods = _typeOfGoods.TypesOfGoods;
         }
         public Enumuration.Action Job { get; private set; }
         public Goods Goods { get; set; }
         public void OnGet(string id)
         {
             Job = Enumuration.Action.Detail;
-            Goods = _khoHang.Get(id);
+            Goods = _repositoryGoods.Get(id);
             ViewData["Title"] = Goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Goods.TenMH}";
             ViewData["classHH"] = "classHH";
         }
@@ -37,8 +42,8 @@ namespace StoreManager.Pages.DSMatHang
   
         public IActionResult OnPostCreate(Goods goods)
         {
-            
-            _khoHang.Add(goods);
+
+            _repositoryGoods.Add(goods);
             return new RedirectToPageResult("Index");
         }
 

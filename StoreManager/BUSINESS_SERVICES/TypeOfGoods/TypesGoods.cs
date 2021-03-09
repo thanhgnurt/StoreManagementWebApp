@@ -9,7 +9,7 @@ using StoreManager.DATA_ACCESS;
 
 namespace StoreManager.BUSINESS_SERVICES.TypeOfGoods
 {
-    public class TypesGoods : HandleFileTypeGoods, ITypeOfGoods
+    public class TypesGoods : HandleFileTypeGoods, ITypesOfGoods
     {
         public static readonly TypeGoods TyGoodsNull = new TypeGoods();
 

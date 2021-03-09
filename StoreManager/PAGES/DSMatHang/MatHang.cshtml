@@ -63,9 +63,9 @@
             <label for="LoaiHang" class="">Loại hàng</label>
             <select class="form-control mb-2" name="LoaiHang" aria-label="example">
                 <option selected name="LoaiHang">Open this select menu</option>
-                <option value="1" name="LoaiHang1">One</option>
-                <option value="2" name="LoaiHang2">Two</option>
-                <option value="3" name="LoaiHang3">Three</option>
+                @RenderOptionTypeGoods()
+
+
             </select>
             <div class="d-flex flex-row-reverse mt-3">
                 <button type="submit" class="btn btn-primary ml-2 mb-2">Save</button>
@@ -77,3 +77,14 @@
     }
 }
 
+
+@{
+
+    async Task RenderOptionTypeGoods()
+    {
+        foreach (var typeGoods in Model.ListTypeGoods)
+        {
+            <option value=@typeGoods.TenLH name=@typeGoods.TenLH>@typeGoods.TenLH</option>
+        }
+    }
+}
