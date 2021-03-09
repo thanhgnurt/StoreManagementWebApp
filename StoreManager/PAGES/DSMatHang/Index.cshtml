@@ -2,12 +2,6 @@
 @using StoreManager.ENTITIES
 @using StoreManager.Pages._Common
 @model StoreManager.Pages.DSMatHang.IndexModel
-@{
-    ViewData["Title"] = "Quản lý hàng hoá";
-    ViewData["classHH"] = "classHH";
-    int currentPage = Convert.ToInt32(ViewData["page"]);
-    int totalPage = Convert.ToInt32(ViewData["pages"]);
-}
 
 <div class="containerHangHoa">
     <div class="row">
@@ -59,13 +53,8 @@
                     <i class="fas fa-trash-alt mr-1"></i> Xoá Danh Sách Chọn
                 </button>
             </div>
-            <div class="col">
-                <nav aria-label="Page navigation example" class="page_navigation">
-                    <ul class="pagination">
-                        @{ListPagination(currentPage, totalPage);}
-                    </ul>
-                </nav>
-            </div>
+            @* Pagination component *@
+            <partial name="_Pagination" />
         </div>
     </form>
 </div>
@@ -107,40 +96,3 @@
     }
 }
 
-@{
-        void ListPagination(int page, int size)
-        {
-            int num1 = 0;
-            int num2 = 0;
-            int num3 = 0;
-
-            if (currentPage > 0)
-            {
-                num1 = currentPage - 1;
-                num2 = currentPage;
-                num3 = currentPage + 1;
-            }
-            else
-            {
-                num1 = currentPage;
-                num2 = currentPage + 1;
-                num3 = currentPage + 2;
-
-            }
-            
-        <a class=" btn btn-secondary mr-1 @(currentPage==1?"disabled text-dark":"")" href="/dsmathang/?trang=1">
-            <span class=" " aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-            </span>
-        </a>
-        <a class=" btn btn-secondary mr-1 @(num1==0?"disabled":"")" href="/dsmathang/?trang=@num1">@(num1==0?"":num1)</a>
-        <a class=" btn btn-dark mr-1 @(num1== totalPage?"disabled":"")" href="/dsmathang/?trang=@num2">@num2</a>
-        <a class=" btn btn-secondary mr-1 @(num2==totalPage?"disabled text-dark":"")" href="/dsmathang/?trang=@num3">@(currentPage==totalPage?"":num3)</a>
-        <a class=" btn btn-secondary mr-1 @(num3==totalPage || num2==totalPage|| num1==totalPage?"disabled text-dark":"")" href="/dsmathang/?trang=@totalPage">
-            <span class=" ")  aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </span>
-        </a>
-
-    }
-}

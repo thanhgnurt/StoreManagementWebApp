@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using StoreManager.BUSINESS_SERVICES.Commodity;
 using StoreManager.BUSINESS_SERVICES.Interface;
 using System;
@@ -25,6 +25,9 @@ namespace StoreManager.Pages.DSMatHang
             var listPage = _repositoryGoods.DivideData(_repositoryGoods.ListGoods,trang, 10);
             ViewData["pages"] = listPage.pages;
             ViewData["page"] = listPage.page;
+            ViewData["path"] = "/dsmathang/?trang=";
+            ViewData["Title"] = "Quản lý hàng hoá - Trang "+ listPage.page;
+            ViewData["classHH"] = "classHH";
             listGoods = listPage.listPage;
         }
 

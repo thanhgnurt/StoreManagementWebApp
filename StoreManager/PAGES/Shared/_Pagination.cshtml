@@ -1,0 +1,54 @@
+﻿@{
+
+    int currentPage = Convert.ToInt32(ViewData["page"]);
+    int totalPage = Convert.ToInt32(ViewData["pages"]);
+    string pathPagination = ViewData["path"].ToString();
+}
+
+
+<div class="col">
+    <nav aria-label="Page navigation example" class="page_navigation">
+        <ul class="pagination">
+            @* Pagination component *@
+            @{ListPagination();}
+        </ul>
+    </nav>
+</div>
+
+@{
+    void ListPagination()
+    {
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
+
+        if (currentPage > 0)
+        {
+            num1 = currentPage - 1;
+            num2 = currentPage;
+            num3 = currentPage + 1;
+        }
+        else
+        {
+            num1 = currentPage;
+            num2 = currentPage + 1;
+            num3 = currentPage + 2;
+
+        }
+
+        <a class=" btn btn-secondary mr-1 @(currentPage == 1 ? "disabled text-dark" : "")" href=@(pathPagination+"1")>
+            <span class=" " aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </span>
+        </a>
+        <a class=" btn btn-secondary mr-1 @(num1 == 0 ? "disabled" : "")" href=@(pathPagination+num1.ToString())>@(num1==0?"":num1)</a>
+        <a class=" btn btn-dark mr-1 @(num1== totalPage?"disabled":"")" href=@(pathPagination+num2.ToString())>@num2</a>
+        <a class=" btn btn-secondary mr-1 @(num2==totalPage?"disabled text-dark":"")" href=@(pathPagination+num3.ToString())>@(currentPage==totalPage?"":num3)</a>
+        <a class=" btn btn-secondary mr-1 @(num3==totalPage || num2==totalPage|| num1==totalPage?"disabled text-dark":"")" href=@(pathPagination+totalPage.ToString())>
+            <span class=" " ) aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </span>
+        </a>
+
+    }
+}

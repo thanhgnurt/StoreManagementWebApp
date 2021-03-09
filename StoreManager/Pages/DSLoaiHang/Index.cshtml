@@ -1,9 +1,5 @@
 ﻿@page
 @model StoreManager.Pages.DSLoaiHang.IndexModel
-@{
-    ViewData["Title"] = "Quản lý loại hàng";
-    ViewData["classLH"] = "classLH";
-}
 <div class="containerHangHoa">
     <div class="row">
         <form class="form-inline mb-2 col-6 text_12" action="/action_page.php">
@@ -28,7 +24,7 @@
             </thead>
             <tbody>
                 @{
-                    foreach (var loaiHang in Model.tyGoodses)
+                    foreach (var loaiHang in Model.TypeGoods)
                     {
                         <tr>
                             <th scope="row">@{CheckBox(loaiHang.MaLH);}</th>
@@ -41,26 +37,15 @@
 
             </tbody>
         </table>
-        <nav aria-label="Page navigation example" class="page_navigation">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <button type="submit" class="btn btn-danger mr-2 text_12">
-            <i class="fas fa-trash-alt mr-1"></i> Xoá Danh Sách Chọn
-        </button>
+        <div class="row">
+            <div class="col">
+                <button type="submit" class="btn btn-danger mr-2 text_12">
+                    <i class="fas fa-trash-alt mr-1"></i> Xoá Danh Sách Chọn
+                </button>
+            </div>
+            @* Pagination component *@
+            <partial name="_Pagination" />
+        </div>
     </form>
 
 </div>
