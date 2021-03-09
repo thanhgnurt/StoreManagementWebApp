@@ -39,9 +39,6 @@ namespace StoreManager.BUSINESS_SERVICES.TypeOfGoods
             TypesOfGoods.Add(tyGoods);
             SaveChangeGoods(_typesGoods);
         }
-        public (TypeGoods[] listPage, int pages, int page) Pagination(int page, int size)
-        {
-            return PartitionPage<TypeGoods>.PaginationCommon(_typesGoods, page, size);
-        }
+
     }
 }

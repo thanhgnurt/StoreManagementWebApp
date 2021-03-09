@@ -23,7 +23,6 @@ namespace StoreManager.Pages.DSMatHang
         {
             Job = Enumuration.Action.Detail;
             Goods = _khoHang.Get(id);
-            Console.WriteLine("get " + Goods.NgaySX);
             ViewData["Title"] = Goods == null ? "Không tìm thấy hàng hoá" : $"Chi tiết - {Goods.TenMH}";
             ViewData["classHH"] = "classHH";
         }

@@ -16,13 +16,13 @@ namespace StoreManager.Pages.DSMatHang
         public IndexModel(IRepositoryGoods repositoryGoods)
         {
             _repositoryGoods = repositoryGoods;
-            listGoods = _repositoryGoods.Pagination(1).listPage;
+            listGoods = _repositoryGoods.DivideData(_repositoryGoods.ListGoods, 1, 10).listPage;
         }
 
         public void OnGet(int trang = 1)
         {
             Console.WriteLine(trang);
-            var listPage = _repositoryGoods.Pagination(trang, 10);
+            var listPage = _repositoryGoods.DivideData(_repositoryGoods.ListGoods,trang, 10);
             ViewData["pages"] = listPage.pages;
             ViewData["page"] = listPage.page;
             listGoods = listPage.listPage;

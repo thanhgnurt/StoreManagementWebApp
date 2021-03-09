@@ -108,38 +108,39 @@
 }
 
 @{
-    void ListPagination(int page, int size)
-    {
-        int num1 = 0;
-        int num2 = 0;
-        int num3 = 0;
-
-        if (currentPage > 1)
+        void ListPagination(int page, int size)
         {
-            num1 = currentPage - 1;
-            num2 = currentPage;
-            num3 = currentPage + 1;
-        }
-        else
-        {
-            num1 = currentPage;
-            num2 = currentPage + 1;
-            num3 = currentPage + 2;
+            int num1 = 0;
+            int num2 = 0;
+            int num3 = 0;
 
-        }
-        <li class="page-item @(num1==currentPage?"disabled":"")">
-            <a class="page-link " href="#" aria-label="Previous">
+            if (currentPage > 0)
+            {
+                num1 = currentPage - 1;
+                num2 = currentPage;
+                num3 = currentPage + 1;
+            }
+            else
+            {
+                num1 = currentPage;
+                num2 = currentPage + 1;
+                num3 = currentPage + 2;
+
+            }
+            
+        <a class=" btn btn-secondary mr-1 @(currentPage==1?"disabled text-dark":"")" href="/dsmathang/?trang=1">
+            <span class=" " aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="/dsmathang/?trang=@num1">@num1</a></li>
-        <li class="page-item @(num1== totalPage?"disabled":"") "><a class="page-link" href="/dsmathang/?trang=@num2">@num2</a></li>
-        <li class="page-item @(num2==totalPage?"disabled":"")"><a class="page-link" href="/dsmathang/?trang=@num3">@num3</a></li>
-        <li class="page-item @(num3==totalPage || num2==totalPage|| num1==totalPage?"disabled":"")">
-            <a class="page-link ") href="#" aria-label="Next">
+            </span>
+        </a>
+        <a class=" btn btn-secondary mr-1 @(num1==0?"disabled":"")" href="/dsmathang/?trang=@num1">@(num1==0?"":num1)</a>
+        <a class=" btn btn-dark mr-1 @(num1== totalPage?"disabled":"")" href="/dsmathang/?trang=@num2">@num2</a>
+        <a class=" btn btn-secondary mr-1 @(num2==totalPage?"disabled text-dark":"")" href="/dsmathang/?trang=@num3">@(currentPage==totalPage?"":num3)</a>
+        <a class=" btn btn-secondary mr-1 @(num3==totalPage || num2==totalPage|| num1==totalPage?"disabled text-dark":"")" href="/dsmathang/?trang=@totalPage">
+            <span class=" ")  aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
+            </span>
+        </a>
 
     }
 }

@@ -49,9 +49,6 @@ namespace StoreManager.BUSINESS_SERVICES.Commodity
             SaveChangeGoods(_listGoods);
         }
 
-        public (Goods[] listPage, int pages, int page) Pagination(int page, int size )
-        {
-            return PartitionPage<Goods>.PaginationCommon(_listGoods, page, size);
-        }
+
     }
 }

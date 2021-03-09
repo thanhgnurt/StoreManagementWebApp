@@ -11,6 +11,11 @@ namespace StoreManager.BUSINESS_SERVICES.Interface
 
         public T Get(string id);
         public void Add(T goods);
-        public (T[] listPage, int pages, int page) Pagination(int page, int size = Constant.MEMBER_PAGE);
+        public (T[] listPage, int pages, int page) DivideData(HashSet<T> listItem, int page, int size)
+        {
+            int pages = (int)Math.Ceiling((double)listItem.Count / size);
+            var listPage = listItem.Skip((page - 1) * size).Take(size).ToArray();
+            return (listPage, pages, page);
+        }
     }
 }
